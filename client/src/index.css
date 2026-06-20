@@ -90,5 +90,6 @@ footer {
   justify-content: center;
   gap: 2rem;
   &:hover {
+    color: var(--pink-100);
   }
 }
