@@ -71,5 +71,24 @@ h1 {
   font-size: 4rem;
   font-weight: 700;
   color: var(--pink-100);
+  background-color: var(--purple-700);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.time-label {
+  text-align: center;
+  color: var(--lavender-300);
+  font-weight: 700;
+  margin-top: 1rem;
+}
+
+footer {
+  background-image: url(./assets/images/pattern-hills.svg);
+  display: flex;
+  padding: 4rem;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  &:hover {
+  }
 }
