@@ -40,31 +40,33 @@ function Countdown() {
   }, []);
 
   return (
-    <section class="countdown-container">
+    <section className="wrapper">
       <h1>We're Launching Soon</h1>
-      <div className="countdown">
-        <span className="time-count">
-          {String(timeLeft.days).padStart(2, "0")}
-        </span>
-        <p className="time-label">Days</p>
-      </div>
-      <div className="countdown">
-        <span className="time-count">
-          {String(timeLeft.hours).padStart(2, "0")}
-        </span>
-        <p className="time-label">Hours</p>
-      </div>
-      <div className="countdown">
-        <span className="time-count">
-          {String(timeLeft.minutes).padStart(2, "0")}
-        </span>
-        <p className="time-label">Minutes</p>
-      </div>
-      <div className="countdown">
-        <span className="time-count">
-          {String(timeLeft.seconds).padStart(2, "0")}
-        </span>
-        <p className="time-label">Seconds</p>
+      <div className="countdown-container">
+        <div className="countdown">
+          <span className="time-count">
+            {String(timeLeft.days).padStart(2, "0")}
+          </span>
+          <p className="time-label">Days</p>
+        </div>
+        <div className="countdown">
+          <span className="time-count">
+            {String(timeLeft.hours).padStart(2, "0")}
+          </span>
+          <p className="time-label">Hours</p>
+        </div>
+        <div className="countdown">
+          <span className="time-count">
+            {String(timeLeft.minutes).padStart(2, "0")}
+          </span>
+          <p className="time-label">Minutes</p>
+        </div>
+        <div className="countdown">
+          <span className="time-count">
+            {String(timeLeft.seconds).padStart(2, "0")}
+          </span>
+          <p className="time-label">Seconds</p>
+        </div>
       </div>
     </section>
   );

@@ -1,0 +1,75 @@
+:root {
+  --white: hsl(0, 0%, 100%);
+  --purple-700: hsl(236, 21%, 26%);
+  --purple-800: hsl(235, 16%, 14%);
+  --purple-900: hsl(234, 17%, 12%);
+  --lavender-300: hsl(237, 18%, 59%);
+  --pink-100: hsl(345, 95%, 68%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Red Hat Text", sans-serif;
+  font-size: 14px;
+  color: var(--white);
+}
+
+h1,
+p {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  background-image: url(./assets/images/bg-stars.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, var(--purple-900), var(--purple-800));
+  z-index: -1;
+}
+.countdown-container {
+  display: flex;
+  min-height: 20vh;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  gap: 1.25rem;
+}
+
+.countdown span {
+  display: flex;
+  width: 8rem;
+  height: 8rem;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid var(--white);
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--pink-100);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
