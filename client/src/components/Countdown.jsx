@@ -7,31 +7,62 @@ function Countdown() {
     days: 8,
     hours: 23,
     minutes: 55,
-    seconds: 41,
+    seconds: 9,
+  });
+  const [flip, setFlip] = useState({
+    days: false,
+    hours: false,
+    minutes: false,
+    seconds: false,
   });
 
   useEffect(() => {
     const timer = setInterval(() => {
       setTimeLeft((prev) => {
         let { days, hours, minutes, seconds } = prev;
+        const updatedFlip = {
+          days: false,
+          hours: false,
+          minutes: false,
+          seconds: false,
+        };
 
         if (seconds > 0) {
           seconds -= 1;
+          updatedFlip.seconds = true;
         } else if (minutes > 0) {
           minutes -= 1;
           seconds = 59;
+          updatedFlip.minutes = true;
+          updatedFlip.seconds = true;
         } else if (hours > 0) {
           hours -= 1;
           minutes = 59;
           seconds = 59;
+          updatedFlip.hours = true;
+          updatedFlip.minutes = true;
+          updatedFlip.seconds = true;
         } else if (days > 0) {
-          days = -1;
+          days -= 1;
           hours = 23;
           minutes = 59;
           seconds = 59;
+          updatedFlip.days = true;
+          updatedFlip.hours = true;
+          updatedFlip.minutes = true;
+          updatedFlip.seconds = true;
         } else {
           clearInterval(timer);
         }
+        setFlip(updatedFlip);
+        setTimeout(() => {
+          setFlip({
+            days: false,
+            hours: false,
+            minutes: false,
+            seconds: false,
+          });
+        }, 850);
         return { days, hours, minutes, seconds };
       });
     }, 1000);
@@ -43,29 +74,74 @@ function Countdown() {
     <section className="wrapper">
       <h1>We're Launching Soon</h1>
       <div className="countdown-container">
-        <div className="countdown">
-          <span className="time-count">
-            {String(timeLeft.days).padStart(2, "0")}
-          </span>
-          <p className="time-label">Days</p>
+        <div>
+          <div className="card">
+            <div className={`inner ${flip.days ? "flip" : ""}`}>
+              <div className="face front">
+                <span>{String(timeLeft.days).padStart(2, "0")}</span>
+                <div className="divider"></div>
+              </div>
+
+              <div className="face back">
+                <span>{String(timeLeft.days).padStart(2, "0")}</span>
+                <div className="divider"></div>
+              </div>
+            </div>
+          </div>
+
+          <p>Days</p>
         </div>
-        <div className="countdown">
-          <span className="time-count">
-            {String(timeLeft.hours).padStart(2, "0")}
-          </span>
-          <p className="time-label">Hours</p>
+
+        <div>
+          <div className="card">
+            <div className={`inner ${flip.hours ? "flip" : ""}`}>
+              <div className="face front">
+                <span>{String(timeLeft.hours).padStart(2, "0")}</span>
+                <div className="divider"></div>
+              </div>
+
+              <div className="face back">
+                <span>{String(timeLeft.hours).padStart(2, "0")}</span>
+                <div className="divider"></div>
+              </div>
+            </div>
+          </div>
+
+          <p>Hours</p>
         </div>
-        <div className="countdown">
-          <span className="time-count">
-            {String(timeLeft.minutes).padStart(2, "0")}
-          </span>
-          <p className="time-label">Minutes</p>
+
+        <div>
+          <div className="card">
+            <div className={`inner ${flip.minutes ? "flip" : ""}`}>
+              <div className="face front">
+                <span>{String(timeLeft.minutes).padStart(2, "0")}</span>
+                <div className="divider"></div>
+              </div>
+
+              <div className="face back">
+                <span>{String(timeLeft.minutes).padStart(2, "0")}</span>
+                <div className="divider"></div>
+              </div>
+            </div>
+          </div>
+
+          <p>Minutes</p>
         </div>
-        <div className="countdown">
-          <span className="time-count">
-            {String(timeLeft.seconds).padStart(2, "0")}
-          </span>
-          <p className="time-label">Seconds</p>
+
+        <div>
+          <div className="card">
+            <div className={`inner ${flip.seconds ? "flip" : ""}`}>
+              <div className="face front">
+                <div className="divider"></div>
+                <span>{String(timeLeft.seconds).padStart(2, "0")}</span>
+              </div>
+
+              <div className="face back">
+                <span>{String(timeLeft.seconds).padStart(2, "0")}</span>
+              </div>
+            </div>
+          </div>
+          <p>Seconds</p>
         </div>
       </div>
     </section>
