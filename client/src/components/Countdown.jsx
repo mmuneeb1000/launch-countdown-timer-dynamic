@@ -55,14 +55,6 @@ function Countdown() {
           clearInterval(timer);
         }
         setFlip(updatedFlip);
-        setTimeout(() => {
-          setFlip({
-            days: false,
-            hours: false,
-            minutes: false,
-            seconds: false,
-          });
-        }, 850);
         return { days, hours, minutes, seconds };
       });
     }, 1000);
@@ -70,75 +62,82 @@ function Countdown() {
     return () => clearInterval(timer);
   }, []);
 
+  useEffect(() => {
+    if (flip.days || flip.hours || flip.minutes || flip.seconds) {
+      const t = setTimeout(() => {
+        setFlip({
+          days: false,
+          hours: false,
+          minutes: false,
+          seconds: false,
+        });
+      }, 800);
+
+      return () => clearTimeout(t);
+    }
+  }, [flip]);
+
   return (
     <section className="wrapper">
       <h1>We're Launching Soon</h1>
       <div className="countdown-container">
-        <div>
-          <div className="card">
-            <div className={`inner ${flip.days ? "flip" : ""}`}>
-              <div className="face front">
-                <span>{String(timeLeft.days).padStart(2, "0")}</span>
-                <div className="divider"></div>
-              </div>
+        <div className="card-container">
+          <div className={`card ${flip.days ? "flip" : ""}`}>
+            <div className="face front">
+              <span>{String(timeLeft.days).padStart(2, "0")}</span>
+              <div className="divider"></div>
+            </div>
 
-              <div className="face back">
-                <span>{String(timeLeft.days).padStart(2, "0")}</span>
-                <div className="divider"></div>
-              </div>
+            <div className="face back">
+              <span>{String(timeLeft.days).padStart(2, "0")}</span>
+              <div className="divider"></div>
             </div>
           </div>
 
           <p>Days</p>
         </div>
 
-        <div>
-          <div className="card">
-            <div className={`inner ${flip.hours ? "flip" : ""}`}>
-              <div className="face front">
-                <span>{String(timeLeft.hours).padStart(2, "0")}</span>
-                <div className="divider"></div>
-              </div>
+        <div className="card-container">
+          <div className={`card ${flip.hours ? "flip" : ""}`}>
+            <div className="face front">
+              <span>{String(timeLeft.hours).padStart(2, "0")}</span>
+              <div className="divider"></div>
+            </div>
 
-              <div className="face back">
-                <span>{String(timeLeft.hours).padStart(2, "0")}</span>
-                <div className="divider"></div>
-              </div>
+            <div className="face back">
+              <span>{String(timeLeft.hours).padStart(2, "0")}</span>
+              <div className="divider"></div>
             </div>
           </div>
 
           <p>Hours</p>
         </div>
 
-        <div>
-          <div className="card">
-            <div className={`inner ${flip.minutes ? "flip" : ""}`}>
-              <div className="face front">
-                <span>{String(timeLeft.minutes).padStart(2, "0")}</span>
-                <div className="divider"></div>
-              </div>
+        <div className="card-container">
+          <div className={`card ${flip.minutes ? "flip" : ""}`}>
+            <div className="face front">
+              <span>{String(timeLeft.minutes).padStart(2, "0")}</span>
+              <div className="divider"></div>
+            </div>
 
-              <div className="face back">
-                <span>{String(timeLeft.minutes).padStart(2, "0")}</span>
-                <div className="divider"></div>
-              </div>
+            <div className="face back">
+              <span>{String(timeLeft.minutes).padStart(2, "0")}</span>
+              <div className="divider"></div>
             </div>
           </div>
 
           <p>Minutes</p>
         </div>
 
-        <div>
-          <div className="card">
-            <div className={`inner ${flip.seconds ? "flip" : ""}`}>
-              <div className="face front">
-                <div className="divider"></div>
-                <span>{String(timeLeft.seconds).padStart(2, "0")}</span>
-              </div>
+        <div className="card-container">
+          <div className={`card ${flip.seconds ? "flip" : ""}`}>
+            <div className="face front">
+              <div className="divider"></div>
+              <span>{String(timeLeft.seconds).padStart(2, "0")}</span>
+            </div>
 
-              <div className="face back">
-                <span>{String(timeLeft.seconds).padStart(2, "0")}</span>
-              </div>
+            <div className="face back">
+              <span>{String(timeLeft.seconds).padStart(2, "0")}</span>
             </div>
           </div>
           <p>Seconds</p>
