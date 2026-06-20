@@ -63,8 +63,8 @@ h1 {
 
 .countdown span {
   display: flex;
-  width: 8rem;
-  height: 8rem;
+  width: 7.5rem;
+  height: 7.5rem;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -86,12 +86,14 @@ h1 {
 footer {
   background-image: url(./assets/images/pattern-hills.svg);
   display: flex;
-  padding: 4rem;
+  height: 20vh;
+  background-size: cover;
+  background-repeat: no-repeat;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  gap: 1.2rem;
   i {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: var(--lavender-300);
     &:hover {
       color: var(--pink-100);
