@@ -4,18 +4,13 @@ This is a solution to the [Launch countdown timer challenge on Frontend Mentor](
 
 ## Table of contents
 
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-  - [AI Collaboration](#ai-collaboration)
+- [Countdown](#countdown-timer)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Live Site](#live-site)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
+- [Notes](#notes)
+- [License](#license)
 
 ## Countdown Timer
 
@@ -35,42 +30,16 @@ A simple countdown timer built with React and Vite. It displays days, hours, min
 - Vite
 - CSS (custom styling)
 
-## Project Setup
+## Live Site
 
-### Install dependencies
+[Netlify Deployement:](https://sweet-tanuki-2dac1f.netlify.app/)
 
-```bash
-npm install
-```
+## Author
 
-### Run development server
+Created by M.Muneeb
 
-```bash
-npm run dev
-```
-
-### Build for production
-
-```bash
-npm run build
-```
-
-### Preview production build
-
-```bash
-npm run preview
-```
-
-## Folder Structure
-
-```
-src/
-  components/
-    Countdown.jsx
-    Footer.jsx
-  App.jsx
-  main.jsx
-```
+- [GitHub](https://github.com/mmuneeb1000/launch-countdown-timer-dynamic)
+- [Frontend Mentor](https://www.frontendmentor.io/profile/mmuneeb1000)
 
 ## Notes
 
