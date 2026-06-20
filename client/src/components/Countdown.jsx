@@ -3,15 +3,12 @@ import { useState } from "react";
 import { useEffect } from "react";
 
 function Countdown() {
-  const [timeLeft, setTimeLeft] =
-    useState <
-    TimeLeft >
-    {
-      days: 8,
-      hours: 23,
-      minutes: 55,
-      seconds: 41,
-    };
+  const [timeLeft, setTimeLeft] = useState({
+    days: 8,
+    hours: 23,
+    minutes: 55,
+    seconds: 41,
+  });
 
   useEffect(() => {
     const timer = setInterval(() => {
