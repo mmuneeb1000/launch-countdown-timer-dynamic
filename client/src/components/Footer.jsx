@@ -1,13 +1,15 @@
-import facebookIcon from "../assets/images/icon-facebook.svg";
-import InstagramIcon from "../assets/images/icon-instagram.svg";
-import pinterestIcon from "../assets/images/icon-pinterest.svg";
-
 export default function Footer() {
   return (
     <footer>
-      <img src={facebookIcon} />
-      <img src={InstagramIcon} />
-      <img src={pinterestIcon} />
+      <a href="#">
+        <i class="fa-brands fa-square-facebook"></i>
+      </a>
+      <a href="#">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+      <a href="#">
+        <i class="fa-brands fa-square-pinterest"></i>
+      </a>
     </footer>
   );
 }
